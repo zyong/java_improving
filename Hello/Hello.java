@@ -1,3 +1,5 @@
+package com.week1.Hello;
+
 public class Hello {
 
   public void hello(){
