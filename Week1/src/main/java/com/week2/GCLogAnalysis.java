@@ -1,8 +1,7 @@
-package com.mark;
+package com.week2;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.LongAdder;
 
 /**

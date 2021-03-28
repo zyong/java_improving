@@ -1,0 +1,7 @@
+package com.week1;
+
+public class HelloByteCode {
+    public static void main(String[] args) {
+        HelloByteCode obj = new HelloByteCode();
+    }
+}

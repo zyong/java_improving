@@ -1,4 +1,4 @@
-package com.mark;
+package com.week1;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class HelloClassLoader extends ClassLoader {
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-        String pathName = "week1/Hello/Hello.xlass";
+        String pathName = "Hello/Hello.xlass";
         File f = new File(pathName);
         Path path = Paths.get(f.getAbsolutePath());
         byte[] data = null;
