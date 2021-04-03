@@ -79,11 +79,7 @@ public class HttpHandler extends ChannelInboundHandlerAdapter {
                     e.printStackTrace();
                 }
             }
-            Header[] resheaders = res.getAllHeaders();
-            for (Header header : resheaders) {
-                System.out.println(header.getName() + " : " + header.getValue());
-            }
-
+            
             response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(value.getBytes("UTF-8")));
             response.headers().set("Content-Type", res.getLastHeader("Content-Type").getValue());
             response.headers().setInt("Content-Length", response.content().readableBytes());
