@@ -14,11 +14,15 @@ import io.netty.handler.codec.http.HttpResponseDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.ReferenceCountUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class NettyHttpHandler extends ChannelInboundHandlerAdapter {
+    private Logger logger = LoggerFactory.getLogger(NettyHttpHandler.class);
+
     private Channel outboundChannel;
 
     @Override
@@ -54,6 +58,8 @@ public class NettyHttpHandler extends ChannelInboundHandlerAdapter {
             });
             // Start the client.
             URL url = new URL(fullRequest.uri());
+            logger.info("request url " + url);
+
             int port = url.getPort() == -1 ? 80 : url.getPort();
             ChannelFuture f = b.connect(url.getHost(), port).sync();
             outboundChannel = f.channel();
@@ -66,27 +72,5 @@ public class NettyHttpHandler extends ChannelInboundHandlerAdapter {
         }
     }
 
-
-    @Override
-    public void channelInactive(ChannelHandlerContext ctx) {
-        if (outboundChannel != null) {
-            closeOnFlush(outboundChannel);
-        }
-    }
-
-    @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        cause.printStackTrace();
-        closeOnFlush(ctx.channel());
-    }
-
-    /**
-     * Closes the specified channel after all queued write requests are flushed.
-     */
-    static void closeOnFlush(Channel ch) {
-        if (ch.isActive()) {
-            ch.writeAndFlush(Unpooled.EMPTY_BUFFER).addListener(ChannelFutureListener.CLOSE);
-        }
-    }
 
 }
