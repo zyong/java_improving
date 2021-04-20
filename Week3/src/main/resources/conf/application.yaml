@@ -1,6 +1,6 @@
 Server:
   port:
-    8808
+    8080
 
 Handlers:
   [

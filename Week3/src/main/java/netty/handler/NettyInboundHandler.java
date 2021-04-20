@@ -4,6 +4,7 @@ import gateway.outbound.netty.HttpClientOutboundHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.handler.codec.http.DefaultHttpRequest;
 import io.netty.handler.codec.http.DefaultHttpResponse;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.FullHttpResponse;
@@ -14,9 +15,9 @@ public class NettyInboundHandler extends ChannelInboundHandlerAdapter {
     private Logger logger = LoggerFactory.getLogger(HttpClientOutboundHandler.class);
 
     ChannelHandlerContext serverCtx;
-    FullHttpRequest serverRequest;
+    DefaultHttpRequest serverRequest;
 
-    public NettyInboundHandler(ChannelHandlerContext ctx, FullHttpRequest request) {
+    public NettyInboundHandler(ChannelHandlerContext ctx, DefaultHttpRequest request) {
         serverRequest = request;
         serverCtx = ctx;
     }
