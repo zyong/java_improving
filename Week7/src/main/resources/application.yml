@@ -1,0 +1,14 @@
+server:
+  port: 8080 # 启动端口
+spring:
+  datasource:
+    db1: # 数据源1
+      url: jdbc:mysql://192.168.3.13:3306/db1?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+      username: mark
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    db2: # 数据源2
+      url: jdbc:mysql://192.168.3.13:3306/db2?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+      username: mark
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver

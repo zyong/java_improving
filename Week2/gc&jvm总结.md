@@ -37,7 +37,7 @@ JVM在内存结构上分为：
 
 #### JAVA8默认参数执行
 
-##### $: /usr/lib/jvm/java-8-openjdk-amd64/bin/java -XX:+PrintGCDetails com.mark.GCLogAnalysis
+##### $: /usr/lib/jvm/java-8-openjdk-amd64/bin/java -XX:+PrintGCDetails mark.GCLogAnalysis
 
 1. JVM内存分配起始值有240M，所以出现了很多次的GC和FULLGC
 2. 第一次YoungGC从64M清理到10M，清理54M数据，Young区大小为74M
