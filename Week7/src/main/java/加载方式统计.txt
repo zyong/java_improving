@@ -1,6 +1,0 @@
-1、使用单行执行语句1小时也才十几万条记录，直接停止执行
-2、使用prepareStatment执行executeBatch插入
-   插入前必须关闭自动提交，同时每次使用addbatch操作才能成功
-   16W条记录 耗时591s，相当于10分钟
-   100W条记录 耗时4989981ms 4989s，相当于83分钟
-3、load data infile mysql服务本地执行加载 8.32s
