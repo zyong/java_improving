@@ -1,0 +1,5 @@
+2.（选做）练习示例代码里下列类中的作业题:
+08cache/redis/src/main/java/io/kimmking/cache/RedisApplication.java
+答：
+根据配置搭建哨兵服务2个实例，获取Redis示例代码，修改Redis示例代码中地址端口等设置，并逐一运行。
+具体代码见Redis目录和Redisdemo目录
