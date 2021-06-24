@@ -1,0 +1,5 @@
+9.（必做）基于 Redis 的 PubSub 实现订单异步处理
+答：
+Publisher程序在OrderController下
+Subscriber程序在io.kimmking.cache 目录下
+请求地址：http://localhost:8080/puborder
